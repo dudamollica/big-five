@@ -48,7 +48,7 @@ const ButtonStyle = styled.button`
   margin-left: 30px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  border: 2px solid purple;
+  border: 2px solid blue;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;

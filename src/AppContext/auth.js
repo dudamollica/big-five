@@ -231,11 +231,11 @@ export default function AuthProvider({ children }) {
     }
 
     function calcularResultado() {
-        setExtroversao((answer1 + answer6 + answer11 + answer16 + answer21 + answer26 + answer31 + answer36) / 8);
-        setAmabilidade((answer2 + answer7 + answer12 + answer17 + answer22 + answer27 + answer32 + answer37, answer42) / 9);
-        setConscienciosidade((answer3 + answer8 + answer13 + answer18 + answer23 + answer28 + answer33 + answer38, answer43) / 9);
-        setNeuroticismo((answer4 + answer9 + answer14 + answer19 + answer24 + answer29 + answer34 + answer39) / 8);
-        setAberturaParaExpericencias((answer5 + answer10 + answer15 + answer20 + answer25 + answer30 + answer35 + answer40, answer41, answer44) / 10);
+        setExtroversao((answer1 + answer6 + answer11 + answer16 + answer21 + answer26 + answer31 + answer36)/8);
+        setAmabilidade((answer2 + answer7 + answer12 + answer17 + answer22 + answer27 + answer32 + answer37 + answer42)/9);
+        setConscienciosidade((answer3 + answer8 + answer13 + answer18 + answer23 + answer28 + answer33 + answer38 + answer43)/9);
+        setNeuroticismo((answer4 + answer9 + answer14 + answer19 + answer24 + answer29 + answer34 + answer39)/8);
+        setAberturaParaExpericencias((answer5 + answer10 + answer15 + answer20 + answer25 + answer30 + answer35 + answer40 + answer41 + answer44)/10);
     }
 
 
