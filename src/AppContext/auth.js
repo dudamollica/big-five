@@ -47,7 +47,11 @@ export default function AuthProvider({ children }) {
     const [answer42, setAnswer42] = useState(0);
     const [answer43, setAnswer43] = useState(0);
     const [answer44, setAnswer44] = useState(0);
-
+    const [extroversao, setExtroversao] = useState(0);
+    const [amabilidade, setAmabilidade] = useState(0);
+    const [conscienciosidade, setConscienciosidade] = useState(0);
+    const [neuroticismo, setNeuroticismo] = useState(0);
+    const [aberturaParaExpericencias, setAberturaParaExpericencias] = useState(0);
 
     function saveAnswer1(answer1) {
         setAnswer1(answer1);
@@ -226,11 +230,12 @@ export default function AuthProvider({ children }) {
         setAnswer44(answer44);
     }
 
-    function addItAllUp() {
-        // let (i = 0, i++, i < 44);{
-        //     console.log("oi" + 1)
-        // }
-        // return (answer1 + answer2 + answer3)
+    function calcularResultado() {
+        setExtroversao((answer1 + answer6 + answer11 + answer16 + answer21 + answer26 + answer31 + answer36) / 8);
+        setAmabilidade((answer2 + answer7 + answer12 + answer17 + answer22 + answer27 + answer32 + answer37, answer42) / 9);
+        setConscienciosidade((answer3 + answer8 + answer13 + answer18 + answer23 + answer28 + answer33 + answer38, answer43) / 9);
+        setNeuroticismo((answer4 + answer9 + answer14 + answer19 + answer24 + answer29 + answer34 + answer39) / 8);
+        setAberturaParaExpericencias((answer5 + answer10 + answer15 + answer20 + answer25 + answer30 + answer35 + answer40, answer41, answer44) / 10);
     }
 
 
@@ -245,7 +250,8 @@ export default function AuthProvider({ children }) {
                 saveAnswer10, saveAnswer11, saveAnswer12, saveAnswer13, saveAnswer14, saveAnswer15, saveAnswer16, saveAnswer17, saveAnswer18, saveAnswer19, saveAnswer20,
                 saveAnswer21, saveAnswer22, saveAnswer23, saveAnswer24, saveAnswer25, saveAnswer26, saveAnswer27, saveAnswer28, saveAnswer29,
                 saveAnswer30, saveAnswer31, saveAnswer32, saveAnswer33, saveAnswer34, saveAnswer35, saveAnswer36, saveAnswer37, saveAnswer38, saveAnswer39,
-                saveAnswer40, saveAnswer41, saveAnswer42, saveAnswer43, saveAnswer44,
+                saveAnswer40, saveAnswer41, saveAnswer42, saveAnswer43, saveAnswer44, calcularResultado,
+                extroversao, amabilidade, conscienciosidade, neuroticismo, aberturaParaExpericencias
             }}
         >
             {children}

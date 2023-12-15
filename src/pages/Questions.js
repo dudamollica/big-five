@@ -1,18 +1,18 @@
 import styled from "styled-components";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AppContext/auth.js";
 
 export default function Questions() {
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { answer1, answer2, answer3, answer4, answer5, answer6, answer7, answer8, answer9, answer10,
     answer11, answer12, answer13, answer14, answer15, answer16, answer17, answer18, answer19, answer20,
     answer21, answer22, answer23, answer24, answer25, answer26, answer27, answer28, answer29, answer30,
     answer31, answer32, answer33, answer34, answer35, answer36, answer37, answer38, answer39, answer40, answer41, answer42, answer43, answer44,
     saveAnswer1, saveAnswer2, saveAnswer3, saveAnswer4, saveAnswer5, saveAnswer6, saveAnswer7, saveAnswer8, saveAnswer9, saveAnswer10, saveAnswer11, saveAnswer12, saveAnswer13, saveAnswer14, saveAnswer15, saveAnswer16, saveAnswer17, saveAnswer18, saveAnswer19,
     saveAnswer20, saveAnswer21, saveAnswer22, saveAnswer23, saveAnswer24, saveAnswer25, saveAnswer26, saveAnswer27, saveAnswer28, saveAnswer29,
-    saveAnswer30, saveAnswer31, saveAnswer32, saveAnswer33, saveAnswer34, saveAnswer35, saveAnswer36, saveAnswer37, saveAnswer38, saveAnswer39, saveAnswer40, saveAnswer41, saveAnswer42, saveAnswer43, saveAnswer44, } = useContext(AuthContext);
+    saveAnswer30, saveAnswer31, saveAnswer32, saveAnswer33, saveAnswer34, saveAnswer35, saveAnswer36, saveAnswer37, saveAnswer38, saveAnswer39, saveAnswer40, saveAnswer41, saveAnswer42, saveAnswer43, saveAnswer44, calcularResultado } = useContext(AuthContext);
 
   return (
     <>
@@ -412,16 +412,22 @@ export default function Questions() {
         <ButtonStyle background={answer44 === 0 || answer44 !== 5 ? "rgb(120, 182, 245)" : "rgb(170, 212, 253);"} onClick={() => saveAnswer44(5)}>Concordo totalmente</ButtonStyle>
       </DivStyle>
 
-      <button>Ver resultado</button>
+      <DivFinishButtonStyle display={answer44 === 0 ? 'none' : 'flex'}>
+        <FinishButtonStyle onClick={() => {
+          calcularResultado()
+          navigate("/results")
+        }}> Ver resultado</FinishButtonStyle>
+      </DivFinishButtonStyle>
     </>
   )
 }
 
 const DivStyle = styled.div`
-  width: 100%;
+  width: 260px;
   display : ${props => props.display ? props.display : 'flex'};
   flex-direction: column;
   align-items: center;
+  margin-left: 50px;
   margin-top: 30px;
   span{
   font-style: normal;
@@ -433,7 +439,7 @@ const DivStyle = styled.div`
 `;
 
 const ButtonStyle = styled.button`
-  width: 290px;
+  width: 270px;
   height: 45px;
   font-weight: 400;
   font-family: 'Righteous';
@@ -451,4 +457,33 @@ const ButtonStyle = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+`
+
+const DivFinishButtonStyle = styled.div`
+width: 100%;
+display : ${props => props.display ? props.display : 'flex'};
+flex-direction: column;
+align-items: center;
+margin-top: 30px;
+`
+
+const FinishButtonStyle = styled.button`
+width: 290px;
+height: 45px;
+font-weight: 400;
+font-family: 'Righteous';
+color: black;
+margin-bottom: 10px;
+background-color: #fde910;
+box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+border-radius: 5px;
+border: 2px solid #fbec5d;
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 26px;
+text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
 `
